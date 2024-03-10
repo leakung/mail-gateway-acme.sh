@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+
+  mail-gw:
+    container_name: mail-gw-postfix
+    restart: unless-stopped
+    hostname: ${HOSTNAME} 
+    build:
+      context: ./ 
+      args:
+        HOSTNAME: ${HOSTNAME}
+        DOMAINNAME: ${DOMAINNAME}
+    ports:
+      - "25:25"
+    volumes:
+      - ./var-log-mail:/var/log/mail
+      - ./etc-ssl-cert:/etc/ssl/cert

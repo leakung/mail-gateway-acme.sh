@@ -1,0 +1,2 @@
+*@domain.tld    mail-gw._domainkey.domain.tld
+*@*.domain.tld    mail-gw._domainkey.domain.tld
